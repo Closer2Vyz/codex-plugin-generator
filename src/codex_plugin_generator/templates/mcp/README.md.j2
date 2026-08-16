@@ -1,0 +1,59 @@
+# {{ name | kebab_to_title }}
+
+{{ description }}
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Configuration
+
+Add to your MCP settings (`~/.config/claude/mcp_settings.json`):
+
+```json
+{
+  "mcpServers": {
+    "{{ name }}": {
+      "command": "python",
+      "args": ["-m", "{{ name | kebab_to_snake }}.server"]
+    }
+  }
+}
+```
+
+## Usage
+
+This MCP server provides the following tools:
+
+- `example_tool` - Example tool description
+
+See [server.py](src/{{ name | kebab_to_snake }}/server.py) for implementation details.
+
+## Development
+
+```bash
+# Install with dev dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black .
+ruff check .
+```
+
+## Contributing
+
+Contributions welcome! Please open an issue or PR.
+
+## License
+
+MIT License - see [LICENSE](LICENSE)
+
+## Author
+
+{{ author }}{% if email %} <{{ email }}>{% endif %}
+{% if github %}GitHub: [@{{ github }}](https://github.com/{{ github }}){% endif %}

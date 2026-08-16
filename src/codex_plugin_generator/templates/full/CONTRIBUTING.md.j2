@@ -1,0 +1,54 @@
+# Contributing to {{ name | kebab_to_title }}
+
+Thank you for your interest in contributing!
+
+## Getting Started
+
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/{{ github }}/{{ name }}.git`
+3. Create a branch: `git checkout -b feature/your-feature`
+4. Make your changes
+5. Run tests: `pytest`
+6. Commit: `git commit -m "Add your feature"`
+7. Push: `git push origin feature/your-feature`
+8. Open a Pull Request
+
+## Development Setup
+
+```bash
+# Install in development mode
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black .
+ruff check --fix .
+```
+
+## Pull Request Guidelines
+
+- Write clear, descriptive commit messages
+- Add tests for new features
+- Update documentation as needed
+- Ensure all tests pass
+- Follow the existing code style
+
+## Code Style
+
+- Follow PEP 8
+- Use type hints
+- Write docstrings for functions and classes
+- Keep functions focused and small
+
+## Testing
+
+- Write tests for new features
+- Maintain test coverage above 80%
+- Use descriptive test names
+- Test edge cases
+
+## Questions?
+
+Open an issue or reach out to {{ author }}{% if email %} at {{ email }}{% endif %}.

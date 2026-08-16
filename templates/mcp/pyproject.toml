@@ -1,0 +1,15 @@
+[project]
+name = "{{ plugin_name }}"
+version = "{{ version }}"
+description = "{{ description }}"
+authors = [{name = "{{ author }}"}]
+dependencies = [
+    "mcp>=0.1.0",
+]
+
+[project.scripts]
+{{ plugin_name }} = "{{ plugin_name }}.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,49 @@
+# {{ name | kebab_to_title }}
+
+{{ description }}
+
+## Installation
+
+Copy this skill to your Codex skills directory:
+
+```bash
+cp -r . ~/.codex/skills/{{ name }}
+```
+
+Or use the Codex CLI:
+
+```bash
+codex skills install {{ name }}
+```
+
+## Usage
+
+See [SKILL.md](SKILL.md) for detailed usage instructions and examples.
+
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Requirements
+
+- Codex (version X.X or higher)
+- Any other dependencies
+
+## Examples
+
+Check the `examples/` directory for usage examples.
+
+## Contributing
+
+Contributions welcome! Please open an issue or PR.
+
+## License
+
+MIT License - see [LICENSE](LICENSE)
+
+## Author
+
+{{ author }}{% if email %} <{{ email }}>{% endif %}
+{% if github %}GitHub: [@{{ github }}](https://github.com/{{ github }}){% endif %}

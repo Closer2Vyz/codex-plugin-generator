@@ -1,0 +1,13 @@
+{
+  "name": "{{ plugin_name }}",
+  "version": "{{ version }}",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "type": "skill",
+  "skills": [
+    {
+      "name": "{{ plugin_name }}",
+      "path": "SKILL.md"
+    }
+  ]
+}

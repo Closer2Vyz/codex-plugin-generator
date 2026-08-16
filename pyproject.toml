@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-plugin-generator"
+version = "0.1.0"
+description = "Generate production-ready Codex plugins with best practices built-in"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "closervyz", email = "your.email@example.com"}
+]
+keywords = ["codex", "openai", "plugin", "generator", "mcp", "scaffold", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+]
+
+dependencies = [
+    "click>=8.1.0",
+    "jinja2>=3.1.0",
+    "pydantic>=2.0.0",
+    "rich>=13.0.0",
+    "inquirer>=3.1.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+[project.scripts]
+codex-plugin-generator = "codex_plugin_generator.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/closervyz/codex-plugin-generator"
+Documentation = "https://github.com/closervyz/codex-plugin-generator#readme"
+Repository = "https://github.com/closervyz/codex-plugin-generator"
+Issues = "https://github.com/closervyz/codex-plugin-generator/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+codex_plugin_generator = ["templates/**/*"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

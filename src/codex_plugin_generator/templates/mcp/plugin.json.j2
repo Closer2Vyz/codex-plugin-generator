@@ -1,0 +1,11 @@
+{
+  "name": "{{ name }}",
+  "version": "0.1.0",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "type": "mcp",
+  "mcp": {
+    "command": "python",
+    "args": ["-m", "{{ name | kebab_to_snake }}.server"]
+  }
+}

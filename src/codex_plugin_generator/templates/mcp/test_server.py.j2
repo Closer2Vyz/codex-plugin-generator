@@ -1,0 +1,27 @@
+"""Tests for {{ name }} MCP server."""
+
+import pytest
+from {{ name | kebab_to_snake }}.server import app
+
+
+@pytest.mark.asyncio
+async def test_list_tools():
+    """Test that tools are listed correctly."""
+    tools = await app.list_tools()
+    assert len(tools) > 0
+    assert tools[0].name == "example_tool"
+
+
+@pytest.mark.asyncio
+async def test_call_tool():
+    """Test tool execution."""
+    result = await app.call_tool("example_tool", {"query": "test"})
+    assert len(result) == 1
+    assert "test" in result[0].text
+
+
+@pytest.mark.asyncio
+async def test_call_unknown_tool():
+    """Test that unknown tools raise an error."""
+    with pytest.raises(ValueError, match="Unknown tool"):
+        await app.call_tool("nonexistent_tool", {})

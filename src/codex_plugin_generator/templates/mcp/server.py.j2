@@ -1,0 +1,51 @@
+"""
+{{ name | kebab_to_title }} MCP Server
+{{ description }}
+"""
+from mcp.server import Server
+from mcp.types import Tool, TextContent
+import mcp.server.stdio
+
+app = Server("{{ name }}")
+
+
+@app.list_tools()
+async def list_tools() -> list[Tool]:
+    """List available tools."""
+    return [
+        Tool(
+            name="example_tool",
+            description="Example tool - replace with your implementation",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Query parameter"
+                    }
+                },
+                "required": ["query"]
+            }
+        )
+    ]
+
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict) -> list[TextContent]:
+    """Handle tool calls."""
+    if name == "example_tool":
+        query = arguments.get("query", "")
+        # TODO: Implement your tool logic here
+        result = f"Processed: {query}"
+        return [TextContent(type="text", text=result)]
+    
+    raise ValueError(f"Unknown tool: {name}")
+
+
+def main():
+    """Run the MCP server."""
+    mcp.server.stdio.run(app)
+
+
+if __name__ == "__main__":
+    main()
