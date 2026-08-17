@@ -1,3 +1,5 @@
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 # 🚀 Codex Plugin Generator
 
 Generate production-ready Codex plugins in seconds with best practices built-in.
