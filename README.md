@@ -22,7 +22,7 @@ Generate production-ready Codex plugins in seconds with best practices built-in.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/codex-plugin-generator.git
+git clone https://github.com/Closer2Vyz/codex-plugin-generator.git
 cd codex-plugin-generator
 
 # Install locally
@@ -160,8 +160,8 @@ Create a `.plugin-generator.json` in your home directory to set defaults:
 ```json
 {
   "author": "Your Name",
-  "email": "your.email@example.com",
-  "github": "yourusername",
+  "email": "you@example.com",
+  "github": "Closer2Vyz",
   "license": "MIT",
   "include_tests": true,
   "include_ci": true
@@ -195,7 +195,7 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) (once a
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/codex-plugin-generator.git
+git clone https://github.com/Closer2Vyz/codex-plugin-generator.git
 cd codex-plugin-generator
 
 # Create virtual environment
